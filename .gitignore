@@ -1,1 +1,7 @@
 *.sqlite3
+*.log
+*.pot
+__pycache__/
+*.py[cod]
+*.so
+.ropeproject
