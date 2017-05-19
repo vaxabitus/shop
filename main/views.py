@@ -29,3 +29,16 @@ def item(request, alias):
         'tovar': tovar,
     }
     return HttpResponse(render_to_string('item.html', context))
+
+
+def get_category(request, alias):
+    try:
+        category = Category.objects.filter(alias=alias)
+        tovars = Item.objects.filter(category=category)
+    except:
+        return Http404
+    context = {
+        'tovars': tovars,
+        'categor': category,
+    }
+    return render(request, 'index.html', context)

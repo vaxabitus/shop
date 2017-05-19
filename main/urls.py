@@ -19,4 +19,5 @@ from . import views
 urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^item/(?P<alias>[^/]+)', views.item, name="item"),
+    url(r'^category/(?P<alias>[^/]+)', views.get_category, name="get_category"),
 ]
